@@ -1,1 +1,271 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Restored Illustrious Provisional Cabildo of Luisiana del Sur</title>
+    <meta name="description" content="Official website of the Restored Cabildo of Luisiana del Sur – proclaiming the restoration of lawful government under the Spanish Crown, the Cabildo Abierto election, and the plurinational Creole State.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            background-color: #fef7e0;
+            color: #2c1810;
+            line-height: 1.5;
+        }
+
+        /* Spanish colonial colors: red (#c60c1e) and yellow (#fcb514) */
+        .top-bar {
+            background: linear-gradient(90deg, #c60c1e 0%, #c60c1e 33%, #fcb514 33%, #fcb514 66%, #c60c1e 66%, #c60c1e 100%);
+            height: 8px;
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #c60c1e;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .seal {
+            width: 100px;
+            height: 100px;
+            background: #2c1810;
+            border-radius: 50%;
+            margin: 0 auto 1rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fcb514;
+            font-size: 2.5rem;
+            font-weight: bold;
+            border: 3px solid #fcb514;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            color: #2c1810;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #5a3a2a;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            border-bottom: 1px solid #e0c8a0;
+            padding-bottom: 1rem;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #2c1810;
+            font-weight: bold;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+
+        .nav a:hover {
+            border-bottom-color: #c60c1e;
+        }
+
+        /* Language switcher */
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .lang-switch a {
+            color: #2c1810;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            font-weight: bold;
+        }
+
+        .lang-switch a:hover {
+            color: #c60c1e;
+        }
+
+        /* Sections */
+        .section {
+            background: #fffef7;
+            border-left: 5px solid #c60c1e;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .section h2 {
+            color: #c60c1e;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #fcb514;
+            padding-left: 1rem;
+        }
+
+        .section h3 {
+            color: #2c1810;
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        .legal-box {
+            background: #f9f2e0;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #c60c1e;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #9a0a18;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e0c8a0;
+            font-size: 0.8rem;
+            color: #5a3a2a;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 1.4rem;
+            }
+            .section h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="top-bar"></div>
+<div class="container">
+    <!-- Language placeholder – actual multilingual version will be separate pages or dynamic -->
+    <div class="lang-switch">
+        <a href="#" hreflang="en">English</a> | <a href="#" hreflang="es">Español</a> | <a href="#" hreflang="fr">Français</a>
+    </div>
+
+    <div class="header">
+        <div class="seal">⚜️</div>
+        <h1>Restored Illustrious Provisional Cabildo<br>of Luisiana del Sur</h1>
+        <div class="subtitle">The Lawful Successor to the Spanish Colonial Government • Restored under the Crown of Spain</div>
+    </div>
+
+    <div class="nav">
+        <a href="/">Proclamation</a>
+        <a href="/legal">Legal & Historical Case</a>
+        <a href="/election">Cabildo Abierto Election</a>
+        <a href="/boncouzan">Bon Couzan List</a>
+        <a href="/news">News & Declarations</a>
+    </div>
+
+    <!-- PROCLAMATION SECTION -->
+    <div class="section">
+        <h2>Proclamation of Restoration</h2>
+        <p><strong>To the People of Luisiana del Sur and to the World:</strong></p>
+        <p>Whereas the so‑called “Louisiana Purchase” of 1803 was a trebly illegal act – violating the 1800 Treaty of San Ildefonso, exceeding the constitutional authority of the United States President, and abrogating the sovereign rights of Spain and the Creole people – the legitimate Spanish Cabildo of New Orleans was never lawfully dissolved.</p>
+        <p>Therefore, We, the Restored Illustrious Provisional Cabildo of Luisiana del Sur, acting as the lawful successor to the Spanish colonial government, do hereby proclaim the restoration of our legitimate authority over the territory of the 27 parishes of Acadiana and Greater New Orleans. All acts of the Baton Rouge Cartel are null and void ab initio.</p>
+        <p>We notify His Majesty King Felipe VI of Spain (and, as a matter of historical continuity, the legitimate Carlist claimant) that the province of Luisiana del Sur has been restored to its lawful status under the Spanish Crown. We respectfully request that the Crown send an attaché to observe the restoration process and liaise with our government.</p>
+        <p class="legal-box" style="margin-top:1rem;"><strong>Signed this 14th day of April, 2026,</strong><br>M. Boudreaux, Regent‑Captain<br><em>Provisional Executive Officer of the Restored Cabildo</em></p>
+    </div>
+
+    <!-- LEGAL FOUNDATION (summary) -->
+    <div class="section">
+        <h2>Legal Foundation: The Illegality of the 1803 “Purchase”</h2>
+        <p>The United States’ claim to Louisiana is founded on a chain of title that is legally void. The 1800 Treaty of San Ildefonso between Spain and France stipulated that France would never “sell or alienate Louisiana to a third party.” Napoleon violated that promise in 1803, selling the territory to the United States without the consent of the Spanish Crown. Furthermore, President Jefferson himself admitted the transaction exceeded his constitutional authority. Under the doctrine of state continuity, an illegal occupation does not extinguish a legitimate government. The Spanish Cabildo – the Illustrious Cabildo of New Orleans – was never lawfully terminated; it continues to exist as a juridical person under international law.</p>
+        <p>The Restored Cabildo derives its authority from this continuity, from the direct democratic mandate of the <em>Cabildo Abierto</em> (digital election), and from the inherent sovereignty of the Creole people of Luisiana del Sur.</p>
+        <a href="/legal" class="button">Read the Full Memoranda →</a>
+    </div>
+
+    <!-- CABILDO ABIERTO ELECTION -->
+    <div class="section">
+        <h2>Cabildo Abierto: The Digital Election</h2>
+        <p>The historic <em>cabildo abierto</em> (open council) was an emergency assembly of citizens to deliberate on public policy and, when necessary, to appoint a new government. Following this tradition, the Restored Cabildo will convene a digital <em>Cabildo Abierto</em> to elect a 60‑delegate assembly. This assembly will serve as the legislative body of the provisional government, draft a state constitution, and elect the Regency Council.</p>
+        <p><strong>Election date to be announced within 30 days of this proclamation.</strong></p>
+        <ul>
+            <li><strong>Voter eligibility:</strong> Residents of the 27 parishes (age 18+, any nationality) and diaspora Creoles who submit a written testimony of organic connection to the territory.</li>
+            <li><strong>Electoral system:</strong> Closed‑list proportional representation with a 3% threshold, using the secure Vocdoni blockchain protocol.</li>
+            <li><strong>Number of seats:</strong> 60 (at‑large).</li>
+            <li><strong>Candidate lists:</strong> Any group may present a list of at least 30 candidates and a platform. No signature requirement.</li>
+        </ul>
+        <a href="/election" class="button">Register to Vote →</a>
+    </div>
+
+    <!-- BON COUZAN LIST (summary) -->
+    <div class="section">
+        <h2>Bon Couzan List: “Good Cousins” – The Sovereignist Slate</h2>
+        <p>The Bon Couzan List is a plurinational, Catholic, decolonial slate committed to the restoration of the Creole State under the Spanish Crown. Its platform includes:</p>
+        <ul>
+            <li><strong>Trilingualism:</strong> Spanish, French, and English as official languages.</li>
+            <li><strong>Land Value Taxation:</strong> Shifting the tax burden from improvements to land to discourage speculation.</li>
+            <li><strong>Developmentalism:</strong> State‑directed development with worker cooperatives and preference for local, family‑owned enterprises.</li>
+            <li><strong>Caribbean Integration:</strong> Building economic and cultural ties with Cuba, Puerto Rico, and the wider Caribbean.</li>
+            <li><strong>Social Welfare:</strong> Uplifting the vulnerable in accordance with Christian principles.</li>
+        </ul>
+        <p>The Bon Couzan List will field a full slate of 60 candidates for the Cabildo Abierto. Its members are the “good cousins” who will anchor the restoration.</p>
+        <a href="/boncouzan" class="button">Read the Full Platform →</a>
+    </div>
+
+    <!-- INTERNATIONAL NOTICE -->
+    <div class="section">
+        <h2>Notification to the Spanish Crown</h2>
+        <p>By decree of the Regent‑Captain, the Restored Cabildo has officially notified His Majesty King Felipe VI (and, as a matter of dynastic law, the Carlist pretender) of the restoration of the province of Luisiana del Sur. The Cabildo requests that the Crown send an attaché to observe the electoral process and to serve as a diplomatic liaison. The Crown’s silence will be interpreted as tacit acquiescence, permitting the provisional government to continue its work.</p>
+        <p>A copy of the official notice is available in the <a href="/legal">Legal Archive</a>.</p>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>The Restored Illustrious Provisional Cabildo of Luisiana del Sur • A lawful government in exile and in formation<br>
+        All communications are protected under the principles of sovereign immunity and the right of self‑determination.</p>
+        <p>⚜️ • 🇪🇸 • ⚜️</p>
+        <p>Contact: <strong>press@cabildodeluisiana.org</strong> (secure channel via ProtonMail)</p>
+    </div>
+</div>
+</body>
+</html>
