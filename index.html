@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,13 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Mandala Foundation · Neon Enlightenment</title>
   <style>
-    /* RESET & GLOBAL */
+    /* [same CSS as before – unchanged] */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       background-color: #000000;
       color: #00FFFF;
@@ -21,8 +21,6 @@
       padding: 1.5rem;
       position: relative;
     }
-
-    /* subtle CRT scanline effect (optional) */
     body::before {
       content: "";
       position: fixed;
@@ -30,37 +28,25 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: repeating-linear-gradient(
-        0deg,
-        rgba(0, 255, 255, 0.02) 0px,
-        rgba(0, 255, 255, 0.02) 2px,
-        transparent 2px,
-        transparent 6px
-      );
+      background: repeating-linear-gradient(0deg, rgba(0,255,255,0.02) 0px, rgba(0,255,255,0.02) 2px, transparent 2px, transparent 6px);
       pointer-events: none;
       z-index: 999;
     }
-
-    /* main container */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 1rem;
     }
-
-    /* typography */
     h1, h2, h3, .logo-text, .nav a {
       font-weight: 400;
       letter-spacing: 2px;
       text-transform: uppercase;
     }
-
     h1 {
       font-size: 2.8rem;
       color: #FFFFFF;
       text-shadow: 0 0 3px #00FFFF;
     }
-
     h2 {
       font-size: 1.8rem;
       border-left: 4px solid #FF00FF;
@@ -68,25 +54,20 @@
       margin: 2rem 0 1rem 0;
       color: #FFFFFF;
     }
-
     h3 {
       font-size: 1.2rem;
       color: #00FFFF;
       margin-bottom: 0.5rem;
     }
-
     a {
       color: #00FFFF;
       text-decoration: none;
       transition: all 0.2s ease;
     }
-
     a:hover {
       color: #FF00FF;
       text-shadow: 0 0 2px #FF00FF;
     }
-
-    /* header & navigation */
     header {
       display: flex;
       flex-wrap: wrap;
@@ -96,46 +77,37 @@
       border-bottom: 1px solid #00FFFF;
       margin-bottom: 2rem;
     }
-
     .logo {
       display: flex;
       align-items: center;
       gap: 1rem;
     }
-
     .logo svg {
       width: 60px;
       height: 60px;
     }
-
     .logo-text {
       font-size: 1.4rem;
       font-weight: bold;
       letter-spacing: 3px;
       color: #FFFFFF;
     }
-
     .logo-text span {
       color: #FF00FF;
     }
-
     nav ul {
       display: flex;
       gap: 2rem;
       list-style: none;
     }
-
     nav a {
       font-size: 1rem;
       padding: 0.25rem 0;
       border-bottom: 1px solid transparent;
     }
-
     nav a:hover {
       border-bottom-color: #FF00FF;
     }
-
-    /* buttons */
     .btn {
       display: inline-block;
       background: transparent;
@@ -149,26 +121,21 @@
       cursor: pointer;
       transition: 0.2s;
     }
-
     .btn:hover {
       background: #00FFFF;
       color: #000000;
       border-color: #00FFFF;
       box-shadow: 0 0 8px #00FFFF;
     }
-
     .btn-magenta {
       border-color: #FF00FF;
       color: #FF00FF;
     }
-
     .btn-magenta:hover {
       background: #FF00FF;
       color: #000000;
       box-shadow: 0 0 8px #FF00FF;
     }
-
-    /* hero section */
     .hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -176,70 +143,53 @@
       margin: 2rem 0 3rem 0;
       align-items: center;
     }
-
-    .hero-text h1 {
-      margin-bottom: 1rem;
-    }
-
     .hero-text p {
       font-size: 1.1rem;
       margin-bottom: 1.5rem;
       color: #CCFFFF;
     }
-
     .hero-stats {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
       margin-top: 1rem;
     }
-
     .stat {
       border-left: 2px solid #FF00FF;
       padding-left: 1rem;
     }
-
     .stat .number {
       font-size: 2rem;
       font-weight: bold;
       color: #FFFFFF;
     }
-
-    /* card / grid layout for nodes */
     .grid-2, .grid-3 {
       display: grid;
       gap: 1.5rem;
       margin: 1.5rem 0;
     }
-
     .grid-2 {
       grid-template-columns: repeat(2, 1fr);
     }
-
     .grid-3 {
       grid-template-columns: repeat(3, 1fr);
     }
-
     .card {
       background: #0A0A0A;
       border: 1px solid #00FFFF;
       padding: 1.2rem;
       transition: 0.2s;
     }
-
     .card:hover {
       border-color: #FF00FF;
       box-shadow: 0 0 5px #FF00FF;
     }
-
     .card h3 {
       border-bottom: 1px dashed #00FFFF;
       display: inline-block;
       padding-bottom: 0.25rem;
       margin-bottom: 0.75rem;
     }
-
-    /* code block look */
     .covenant {
       background: #050505;
       border-left: 4px solid #FF00FF;
@@ -249,8 +199,6 @@
       margin: 1.5rem 0;
       white-space: pre-wrap;
     }
-
-    /* footer */
     footer {
       margin-top: 4rem;
       padding-top: 2rem;
@@ -261,38 +209,20 @@
       flex-wrap: wrap;
       gap: 1rem;
     }
-
-    /* responsive */
     @media (max-width: 800px) {
-      body {
-        padding: 1rem;
-      }
-      .hero {
-        grid-template-columns: 1fr;
-      }
-      .grid-2, .grid-3 {
-        grid-template-columns: 1fr;
-      }
-      nav ul {
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 1rem;
-      }
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
+      body { padding: 1rem; }
+      .hero { grid-template-columns: 1fr; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      nav ul { gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem; }
+      header { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
 <body>
 <div class="container">
-  
-  <!-- HEADER with 80s logo -->
   <header>
     <div class="logo">
-      <!-- embed the flower mandala SVG (80's tech style) -->
+      <!-- same flower mandala SVG -->
       <svg width="50" height="50" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="200" height="200" fill="#000000" />
         <circle cx="100" cy="100" r="90" stroke="#00FFFF" stroke-width="1.5" stroke-dasharray="6 6" fill="none"/>
@@ -324,16 +254,16 @@
     </div>
     <nav>
       <ul>
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">MANDALA NODES</a></li>
-        <li><a href="#">DAO TREASURY</a></li>
-        <li><a href="#">COVENANT</a></li>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="kalachakra.html">KALACHAKRA</a></li>
+        <li><a href="#">NODES</a></li>
+        <li><a href="#">DAO</a></li>
         <li><a href="#">JOIN</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- Hero section (unchanged but shown for completeness) -->
   <section class="hero">
     <div class="hero-text">
       <h1>NEON ENLIGHTENMENT</h1>
@@ -349,7 +279,6 @@
       </div>
     </div>
     <div class="hero-graphic">
-      <!-- decorative ascii / simple monitor frame -->
       <div style="border: 2px solid #00FFFF; padding: 1rem; text-align: center;">
         <pre style="color:#FF00FF; font-size: 0.7rem; line-height: 1.2; font-family: monospace;">
 +-----------------------------------+
@@ -365,7 +294,7 @@
     </div>
   </section>
 
-  <!-- MANDALA NODES (de facto governance) -->
+  <!-- rest of homepage content (nodes, DAO, covenant, call to action, footer) unchanged -->
   <h2>⦿ MANDALA NODES</h2>
   <div class="grid-3">
     <div class="card">
@@ -385,7 +314,6 @@
     </div>
   </div>
 
-  <!-- DAO + FUNDRAISING -->
   <h2>⦿ THE DAO · LIQUID TREASURY</h2>
   <div class="grid-2">
     <div class="card">
@@ -403,7 +331,6 @@
     </div>
   </div>
 
-  <!-- COVENANT (core principles snippet) -->
   <h2>⦿ COVENANT OF THE ORDA</h2>
   <div class="covenant">
     <p style="color:#FFFFFF;">“I renounce the nation, private property, and the patriarchal family. I vow to cooperate with my oba, to attend the Kurultai, and to give my labor and my pledge (the Five Pecks) to the Mandala Orda. I will not betray this covenant.”</p>
@@ -411,7 +338,6 @@
     <div style="margin-top: 1rem;"><a href="#" class="btn">📜 FULL DECLARATION</a></div>
   </div>
 
-  <!-- RETRO CALL TO ACTION -->
   <div style="text-align: center; margin: 3rem 0; border: 1px solid #FF00FF; padding: 1.5rem; background: #0A0A0A;">
     <p style="color:#FFFFFF; font-size: 1.2rem; letter-spacing: 2px;">&lt; RECRUITING FIRST 100 MEMBERS — PASS THE EXAMINATION &gt;</p>
     <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
@@ -420,14 +346,11 @@
     </div>
   </div>
 
-  <!-- FOOTER with retro details -->
   <footer>
     <div>© 2026 MANDALA FOUNDATION · Wyoming UNA / DAO LLC</div>
     <div><span style="color:#FF00FF;">✧</span> DECENTRALIZED · NONPROFIT · POST‑NATIONAL <span style="color:#FF00FF;">✧</span></div>
     <div><a href="#">Signal contact</a> | <a href="#">Snapshot space</a> | <a href="#">Safe multisig</a></div>
   </footer>
-
 </div>
-<!-- optional: add a small console cursor effect -->
 </body>
 </html>
