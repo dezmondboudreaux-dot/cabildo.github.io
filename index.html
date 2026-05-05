@@ -1,174 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Way of the Five Pecks – A Taoist Religious Community</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Mandala Foundation · Neon Enlightenment</title>
+  <style>
+    /* RESET & GLOBAL */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            background-color: #fef9e6;  /* soft rice paper */
-            color: #2c2c2c;
-            font-family: 'Georgia', 'Times New Roman', serif;
-            line-height: 1.6;
-            padding: 2rem 1rem;
-        }
+    body {
+      background-color: #000000;
+      color: #00FFFF;
+      font-family: 'Courier New', 'VT323', 'Fira Code', monospace;
+      line-height: 1.5;
+      font-size: 16px;
+      padding: 1.5rem;
+      position: relative;
+    }
 
-        .container {
-            max-width: 780px;
-            margin: 0 auto;
-            background: rgba(255, 252, 240, 0.9);
-            padding: 2rem;
-            border-radius: 4px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.02);
-        }
+    /* subtle CRT scanline effect (optional) */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 255, 0.02) 0px,
+        rgba(0, 255, 255, 0.02) 2px,
+        transparent 2px,
+        transparent 6px
+      );
+      pointer-events: none;
+      z-index: 999;
+    }
 
-        h1, h2, h3 {
-            font-weight: normal;
-            letter-spacing: 1px;
-        }
+    /* main container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
 
-        h1 {
-            font-size: 2.2rem;
-            text-align: center;
-            margin-bottom: 0.5rem;
-            color: #1a4d2a;
-        }
+    /* typography */
+    h1, h2, h3, .logo-text, .nav a {
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
-        .subhead {
-            text-align: center;
-            font-style: italic;
-            border-bottom: 1px solid #c0b28a;
-            padding-bottom: 1rem;
-            margin-bottom: 2rem;
-            color: #5a4a2a;
-        }
+    h1 {
+      font-size: 2.8rem;
+      color: #FFFFFF;
+      text-shadow: 0 0 3px #00FFFF;
+    }
 
-        .yin-yang {
-            display: block;
-            width: 60px;
-            margin: 1rem auto;
-        }
+    h2 {
+      font-size: 1.8rem;
+      border-left: 4px solid #FF00FF;
+      padding-left: 1rem;
+      margin: 2rem 0 1rem 0;
+      color: #FFFFFF;
+    }
 
-        h2 {
-            font-size: 1.6rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            border-left: 4px solid #2a7a3a;
-            padding-left: 1rem;
-        }
+    h3 {
+      font-size: 1.2rem;
+      color: #00FFFF;
+      margin-bottom: 0.5rem;
+    }
 
-        .articles-box {
-            background: #f4efdf;
-            padding: 1.2rem;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            max-height: 400px;
-            overflow-y: auto;
-            border: 1px solid #dad1b6;
-        }
+    a {
+      color: #00FFFF;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
 
-        .articles-box p {
-            margin-bottom: 0.75rem;
-        }
+    a:hover {
+      color: #FF00FF;
+      text-shadow: 0 0 2px #FF00FF;
+    }
 
-        .articles-box em {
-            color: #3a5a3a;
-        }
+    /* header & navigation */
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #00FFFF;
+      margin-bottom: 2rem;
+    }
 
-        .mandate {
-            background: #eaf4e5;
-            padding: 1rem;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-        }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
 
-        .contact {
-            background: #fff6e0;
-            border: 1px dashed #b0a07a;
-            padding: 1.2rem;
-            text-align: center;
-            margin-top: 2rem;
-        }
+    .logo svg {
+      width: 60px;
+      height: 60px;
+    }
 
-        .contact a {
-            color: #2a6a3a;
-            text-decoration: none;
-            border-bottom: 1px dotted;
-        }
+    .logo-text {
+      font-size: 1.4rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #FFFFFF;
+    }
 
-        footer {
-            margin-top: 3rem;
-            font-size: 0.75rem;
-            text-align: center;
-            color: #7a6a4a;
-            border-top: 1px solid #e0d5bc;
-            padding-top: 1rem;
-        }
+    .logo-text span {
+      color: #FF00FF;
+    }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 1rem 0.5rem;
-            }
-            .container {
-                padding: 1rem;
-            }
-            h1 {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    nav a {
+      font-size: 1rem;
+      padding: 0.25rem 0;
+      border-bottom: 1px solid transparent;
+    }
+
+    nav a:hover {
+      border-bottom-color: #FF00FF;
+    }
+
+    /* buttons */
+    .btn {
+      display: inline-block;
+      background: transparent;
+      border: 1px solid #00FFFF;
+      color: #00FFFF;
+      padding: 0.75rem 1.5rem;
+      font-family: inherit;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #00FFFF;
+      color: #000000;
+      border-color: #00FFFF;
+      box-shadow: 0 0 8px #00FFFF;
+    }
+
+    .btn-magenta {
+      border-color: #FF00FF;
+      color: #FF00FF;
+    }
+
+    .btn-magenta:hover {
+      background: #FF00FF;
+      color: #000000;
+      box-shadow: 0 0 8px #FF00FF;
+    }
+
+    /* hero section */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2rem 0 3rem 0;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: #CCFFFF;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .stat {
+      border-left: 2px solid #FF00FF;
+      padding-left: 1rem;
+    }
+
+    .stat .number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #FFFFFF;
+    }
+
+    /* card / grid layout for nodes */
+    .grid-2, .grid-3 {
+      display: grid;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      background: #0A0A0A;
+      border: 1px solid #00FFFF;
+      padding: 1.2rem;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      border-color: #FF00FF;
+      box-shadow: 0 0 5px #FF00FF;
+    }
+
+    .card h3 {
+      border-bottom: 1px dashed #00FFFF;
+      display: inline-block;
+      padding-bottom: 0.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* code block look */
+    .covenant {
+      background: #050505;
+      border-left: 4px solid #FF00FF;
+      padding: 1.2rem;
+      font-family: monospace;
+      font-size: 0.9rem;
+      margin: 1.5rem 0;
+      white-space: pre-wrap;
+    }
+
+    /* footer */
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid #00FFFF;
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* responsive */
+    @media (max-width: 800px) {
+      body {
+        padding: 1rem;
+      }
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
 <div class="container">
-    <!-- Simple SVG Yin-Yang (inline) -->
-    <svg class="yin-yang" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="48" stroke="#2a6a3a" stroke-width="2" fill="#fef9e6"/>
-        <path d="M50 2 A48 48 0 0 1 50 98 A24 24 0 0 1 50 50 A24 24 0 0 0 50 2" fill="#2a6a3a"/>
-        <circle cx="50" cy="26" r="6" fill="#fef9e6"/>
-        <circle cx="50" cy="74" r="6" fill="#2a6a3a"/>
-    </svg>
-
-    <h1>Way of the Five Pecks</h1>
-    <div class="subhead">Taoist religious community · Azure Kalpa · TaiPing</div>
-
-    <h2>☯ Articles of Faith</h2>
-    <div class="articles-box">
-        <p>We believe in the <strong>Dao</strong>, the ineffable, ultimate reality beyond all forms, which is the origin of all things; <strong>Yin-yang duality</strong>, the source of natural law.</p>
-        <p>We believe in the <strong>Wu-xing (Five Phases)</strong>.</p>
-        <p>We believe in the <strong>I Ching and the 8 Trigrams</strong>, the mechanism behind all changes among things.</p>
-        <p>We believe in the scriptures inspired by Heaven: the <em>Tao Te Ching</em>, revealed by Old Master, and the <em>Xiang X'er</em>, revealed by Master Zhang.</p>
-        <p>We believe in <strong>Qi</strong>, the Universal Essence of Life, present in all things.</p>
-        <p>We believe that <strong>sin</strong> is the obstruction of Qi through misalignment with the Dao. Sin must be rectified by <strong>Te (virtue)</strong> through repentance and good deeds as atonement.</p>
-        <p>We believe that <strong>Immortality</strong> means freedom from rebirth, rather than the scattering of Qi in rebirth. <strong>Salvation</strong> is redemption from rebirth and Immortality in the Grotto of Heaven with the Saints.</p>
-        <p>That <strong>Time follows the cycle of Wu-xing</strong>, and we are at the <strong>End of the Kalpa</strong>. We are preparing the way for the coming <strong>Azure Kalpa</strong>, ruled over by the Azure Dragon, that will give rise to the long awaited <strong>TaiPing</strong>.</p>
+  
+  <!-- HEADER with 80s logo -->
+  <header>
+    <div class="logo">
+      <!-- embed the flower mandala SVG (80's tech style) -->
+      <svg width="50" height="50" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="200" height="200" fill="#000000" />
+        <circle cx="100" cy="100" r="90" stroke="#00FFFF" stroke-width="1.5" stroke-dasharray="6 6" fill="none"/>
+        <g stroke="#00FFFF" stroke-width="2" fill="none">
+          <path d="M100,95 L100,35 L100,95" />
+          <path d="M100,105 L100,165 L100,105" />
+          <path d="M95,100 L35,100 L95,100" />
+          <path d="M105,100 L165,100 L105,100" />
+          <path d="M95,95 L50,50 L95,95" />
+          <path d="M105,95 L150,50 L105,95" />
+          <path d="M105,105 L150,150 L105,105" />
+          <path d="M95,105 L50,150 L95,105" />
+        </g>
+        <circle cx="100" cy="100" r="12" fill="#FF00FF" />
+        <circle cx="100" cy="100" r="4" fill="#FFFFFF" />
+        <g fill="#00FFFF">
+          <rect x="95" y="20" width="2" height="2" />
+          <rect x="95" y="178" width="2" height="2" />
+          <rect x="20" y="95" width="2" height="2" />
+          <rect x="178" y="95" width="2" height="2" />
+          <rect x="38" y="38" width="2" height="2" />
+          <rect x="160" y="38" width="2" height="2" />
+          <rect x="38" y="160" width="2" height="2" />
+          <rect x="160" y="160" width="2" height="2" />
+        </g>
+        <text x="190" y="195" font-family="'Courier New', monospace" font-size="7" fill="#00FFFF" text-anchor="end">FLWR-01</text>
+      </svg>
+      <div class="logo-text">MANDALA<span>FOUNDATION</span></div>
     </div>
+    <nav>
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">MANDALA NODES</a></li>
+        <li><a href="#">DAO TREASURY</a></li>
+        <li><a href="#">COVENANT</a></li>
+        <li><a href="#">JOIN</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <h2>🐉 The Celestial Mandate</h2>
-    <div class="mandate">
-        <p>The Azure Dragon descends when the old world is exhausted. We are called to cultivate <strong>Te (virtue)</strong>, harmonize communities, and prepare the way for Great Peace (TaiPing). This is not a political movement but a spiritual awakening rooted in the ancient Way of the Five Pecks of Rice — a tradition of mutual aid, confession, and collective liberation.</p>
-        <p>Those who feel the call are invited to learn more.</p>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>NEON ENLIGHTENMENT</h1>
+      <p>Building the benign patchwork — rural reconstruction, cybernetic socialism, and de‑facto governance. The Mandala Foundation is a decentralized network of nodes reclaiming the Mississippi Delta and beyond.</p>
+      <div class="hero-stats">
+        <div class="stat"><span class="number">125+</span><br>MEMBERS</div>
+        <div class="stat"><span class="number">3</span><br>ACTIVE NODES</div>
+        <div class="stat"><span class="number">2026</span><br>FOUNDED</div>
+      </div>
+      <div style="margin-top: 1.5rem;">
+        <a href="#" class="btn">⚡ PLEDGE FIVE PECKS</a>
+        <a href="#" class="btn btn-magenta" style="margin-left: 1rem;">📡 EXPLORE NETWORK</a>
+      </div>
     </div>
-
-    <h2>🌾 Membership & The Five Pecks</h2>
-    <p>In the original Five Pecks movement, each household offered five pecks of rice to sustain the community. Today, we ask members to contribute according to their ability — whether through time, skills, or material support — and to receive according to need. Our religious association is governed by traditional Taoist principles, not by any secular authority.</p>
-    <p>We are currently forming a core community. When the traditional threshold of <strong>100 members</strong> is reached, we will formally establish our religious association under the protections of religious freedom.</p>
-
-    <div class="contact">
-        <p>✉️ To learn more or to express interest in membership, write to:<br>
-        <strong><a href="mailto:fivepecks@protonmail.com">fivepecks@protonmail.com</a></strong></p>
-        <p style="font-size:0.85rem; margin-top:0.5rem;">Please include a brief introduction and your reason for reaching out.</p>
+    <div class="hero-graphic">
+      <!-- decorative ascii / simple monitor frame -->
+      <div style="border: 2px solid #00FFFF; padding: 1rem; text-align: center;">
+        <pre style="color:#FF00FF; font-size: 0.7rem; line-height: 1.2; font-family: monospace;">
++-----------------------------------+
+|  MANDALA NODE v1.0   ONLINE      |
+|  PERRY COUNTY  •  RURAL GRID      |
+|  [HEALTH] [AGRI] [HOUSING]        |
+|  VOTING QUORUM: 23%  ACTIVE       |
++-----------------------------------+
+        </pre>
+        <div style="background:#00FFFF; width: 100%; height: 2px; margin-top: 5px;"></div>
+        <div style="color:#00FFFF; margin-top: 5px;">&lt; CYBERNETIC FEEDBACK ACTIVE &gt;</div>
+      </div>
     </div>
+  </section>
 
-    <footer>
-        Way of the Five Pecks – A Taoist religious association.<br>
-        This site uses no cookies, no trackers, and no external scripts. 
-    </footer>
+  <!-- MANDALA NODES (de facto governance) -->
+  <h2>⦿ MANDALA NODES</h2>
+  <div class="grid-3">
+    <div class="card">
+      <h3>PERRY COUNTY · PILOT</h3>
+      <p>Land trust + housing cooperative. Mobile health, agricultural extension, HOA governance. Prototype for rural reconstruction.</p>
+      <span style="color:#FF00FF;">STATUS: ██████████ 90%</span>
+    </div>
+    <div class="card">
+      <h3>HALE COUNTY · CORRIDOR</h3>
+      <p>Contiguous expansion via infrastructure repair. Utility co-op formation, food distribution hub.</p>
+      <span style="color:#FF00FF;">STATUS: ████████░░ 70%</span>
+    </div>
+    <div class="card">
+      <h3>MISSISSIPPI DELTA · SCAN</h3>
+      <p>Strategic reconnaissance. Partnership with local clinics, abandoned hospital acquisition.</p>
+      <span style="color:#FF00FF;">STATUS: ████░░░░░░ 40%</span>
+    </div>
+  </div>
+
+  <!-- DAO + FUNDRAISING -->
+  <h2>⦿ THE DAO · LIQUID TREASURY</h2>
+  <div class="grid-2">
+    <div class="card">
+      <h3>GOVERNANCE TOKEN</h3>
+      <p>Soulbound membership (one vote per member). Annual pledge of 5 PECKS (~$20) renews active status.</p>
+      <p><span style="color:#FF00FF;">CONTRACT:</span> 0x7D5…F3A9 (Arbitrum)</p>
+      <a href="#" class="btn" style="margin-top: 0.5rem;">🔓 MEMBERSHIP PORTAL</a>
+    </div>
+    <div class="card">
+      <h3>FUNDING MECHANICS</h3>
+      <p>Yield‑bearing stablecoin treasury + Gitcoin grants + limited token sale (Reg D 506c).</p>
+      <p><span style="color:#00FFFF;">Current NAV:</span> $142,000 USDC</p>
+      <p><span style="color:#FF00FF;">Phase 1 target:</span> $500,000</p>
+      <a href="#" class="btn btn-magenta">📊 VIEW TREASURY</a>
+    </div>
+  </div>
+
+  <!-- COVENANT (core principles snippet) -->
+  <h2>⦿ COVENANT OF THE ORDA</h2>
+  <div class="covenant">
+    <p style="color:#FFFFFF;">“I renounce the nation, private property, and the patriarchal family. I vow to cooperate with my oba, to attend the Kurultai, and to give my labor and my pledge (the Five Pecks) to the Mandala Orda. I will not betray this covenant.”</p>
+    <p style="margin-top: 0.7rem;">— based on Kang Youwei’s *Book of Heaven and Earth* (Neon Enlightenment synthesis)</p>
+    <div style="margin-top: 1rem;"><a href="#" class="btn">📜 FULL DECLARATION</a></div>
+  </div>
+
+  <!-- RETRO CALL TO ACTION -->
+  <div style="text-align: center; margin: 3rem 0; border: 1px solid #FF00FF; padding: 1.5rem; background: #0A0A0A;">
+    <p style="color:#FFFFFF; font-size: 1.2rem; letter-spacing: 2px;">&lt; RECRUITING FIRST 100 MEMBERS — PASS THE EXAMINATION &gt;</p>
+    <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+      <a href="#" class="btn">✍️ REQUEST EXAM</a>
+      <a href="#" class="btn btn-magenta">🎧 MONTHLY DIGITAL KURULTAI</a>
+    </div>
+  </div>
+
+  <!-- FOOTER with retro details -->
+  <footer>
+    <div>© 2026 MANDALA FOUNDATION · Wyoming UNA / DAO LLC</div>
+    <div><span style="color:#FF00FF;">✧</span> DECENTRALIZED · NONPROFIT · POST‑NATIONAL <span style="color:#FF00FF;">✧</span></div>
+    <div><a href="#">Signal contact</a> | <a href="#">Snapshot space</a> | <a href="#">Safe multisig</a></div>
+  </footer>
+
 </div>
+<!-- optional: add a small console cursor effect -->
 </body>
 </html>
