@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Network Hub · Mandala Foundation</title>
   <style>
-    /* Same base style as homepage */
+    /* ========== 80s Tech Corporate Aesthetic ========== */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
       background-color: #000000;
       color: #00FFFF;
@@ -18,7 +19,10 @@
       line-height: 1.5;
       font-size: 16px;
       padding: 1.5rem;
+      position: relative;
     }
+
+    /* CRT scanline effect */
     body::before {
       content: "";
       position: fixed;
@@ -30,21 +34,25 @@
       pointer-events: none;
       z-index: 999;
     }
+
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 1rem;
     }
+
     h1, h2, h3, .logo-text, .nav a {
       font-weight: 400;
       letter-spacing: 2px;
       text-transform: uppercase;
     }
+
     h1 {
       font-size: 2.8rem;
       color: #FFFFFF;
       text-shadow: 0 0 3px #00FFFF;
     }
+
     h2 {
       font-size: 1.8rem;
       border-left: 4px solid #FF00FF;
@@ -52,15 +60,19 @@
       margin: 2rem 0 1rem 0;
       color: #FFFFFF;
     }
+
     a {
       color: #00FFFF;
       text-decoration: none;
-      transition: 0.2s;
+      transition: all 0.2s ease;
     }
+
     a:hover {
       color: #FF00FF;
       text-shadow: 0 0 2px #FF00FF;
     }
+
+    /* Header & Navigation */
     header {
       display: flex;
       flex-wrap: wrap;
@@ -70,36 +82,46 @@
       border-bottom: 1px solid #00FFFF;
       margin-bottom: 2rem;
     }
+
     .logo {
       display: flex;
       align-items: center;
       gap: 1rem;
     }
+
     .logo svg {
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
     }
+
     .logo-text {
       font-size: 1.4rem;
+      font-weight: bold;
       letter-spacing: 3px;
       color: #FFFFFF;
     }
+
     .logo-text span {
       color: #FF00FF;
     }
+
     nav ul {
       display: flex;
       gap: 2rem;
       list-style: none;
     }
+
     nav a {
       font-size: 1rem;
       padding: 0.25rem 0;
       border-bottom: 1px solid transparent;
     }
+
     nav a:hover {
       border-bottom-color: #FF00FF;
     }
+
+    /* Buttons */
     .btn {
       display: inline-block;
       background: transparent;
@@ -113,35 +135,43 @@
       cursor: pointer;
       transition: 0.2s;
     }
+
     .btn:hover {
       background: #00FFFF;
       color: #000000;
       box-shadow: 0 0 8px #00FFFF;
     }
+
     .btn-magenta {
       border-color: #FF00FF;
       color: #FF00FF;
     }
+
     .btn-magenta:hover {
       background: #FF00FF;
       color: #000000;
     }
+
+    /* Hub grid */
     .hub-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 1.5rem;
       margin: 2rem 0;
     }
+
     .hub-card {
       background: #0A0A0A;
       border: 1px solid #00FFFF;
       padding: 1.2rem;
       transition: 0.2s;
     }
+
     .hub-card:hover {
       border-color: #FF00FF;
       box-shadow: 0 0 5px #FF00FF;
     }
+
     .hub-card h3 {
       color: #FFFFFF;
       border-bottom: 1px dashed #FF00FF;
@@ -149,11 +179,13 @@
       padding-bottom: 0.25rem;
       margin-bottom: 0.75rem;
     }
+
     .hub-card p {
       margin-bottom: 1rem;
       font-size: 0.9rem;
       color: #CCFFFF;
     }
+
     .status-badge {
       display: inline-block;
       background: #FF00FF20;
@@ -163,6 +195,8 @@
       color: #FF00FF;
       margin-bottom: 0.8rem;
     }
+
+    /* Footer */
     footer {
       margin-top: 3rem;
       padding-top: 2rem;
@@ -173,11 +207,24 @@
       flex-wrap: wrap;
       gap: 1rem;
     }
-    @media (max-width: 700px) {
-      body { padding: 1rem; }
-      header { flex-direction: column; text-align: center; }
-      nav ul { gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem; }
-      .hub-grid { grid-template-columns: 1fr; }
+
+    @media (max-width: 800px) {
+      body {
+        padding: 1rem;
+      }
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+      .hub-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -185,7 +232,6 @@
 <div class="container">
   <header>
     <div class="logo">
-      <!-- same flower mandala SVG -->
       <svg width="50" height="50" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="200" height="200" fill="#000000" />
         <circle cx="100" cy="100" r="90" stroke="#00FFFF" stroke-width="1.5" stroke-dasharray="6 6" fill="none"/>
@@ -220,9 +266,9 @@
         <li><a href="index.html">HOME</a></li>
         <li><a href="kalachakra.html">KALACHAKRA</a></li>
         <li><a href="network.html">NETWORK HUB</a></li>
-        <li><a href="#">NODES</a></li>
-        <li><a href="#">DAO</a></li>
-        <li><a href="#">JOIN</a></li>
+        <li><a href="nodes.html">NODES</a></li>
+        <li><a href="dao.html">DAO</a></li>
+        <li><a href="join.html">JOIN</a></li>
       </ul>
     </nav>
   </header>
@@ -234,7 +280,6 @@
   </div>
 
   <div class="hub-grid">
-    <!-- Communication channels -->
     <div class="hub-card">
       <div class="status-badge">🔗 ACTIVE</div>
       <h3>📡 SIGNAL / TELEGRAM</h3>
@@ -247,8 +292,6 @@
       <p>Open forum for discussion, announcements, and recruitment.</p>
       <a href="#" class="btn" style="font-size:0.8rem;">→ ENTER SERVER</a>
     </div>
-
-    <!-- DAO & treasury -->
     <div class="hub-card">
       <div class="status-badge">🟢 TEST PHASE</div>
       <h3>🗳️ SNAPSHOT SPACE</h3>
@@ -261,8 +304,6 @@
       <p>On‑chain treasury (Arbitrum). Read‑only for non‑signers.</p>
       <a href="#" class="btn" style="font-size:0.8rem;">→ EXPLORE</a>
     </div>
-
-    <!-- Examination & study -->
     <div class="hub-card">
       <div class="status-badge">📖 DRAFT</div>
       <h3>✍️ EXAMINATION COURSE</h3>
@@ -275,8 +316,6 @@
       <p>Quarterly journal – theory, node reports, translations.</p>
       <a href="kalachakra.html" class="btn" style="font-size:0.8rem;">→ BROWSE ISSUES</a>
     </div>
-
-    <!-- Membership & pledge -->
     <div class="hub-card">
       <div class="status-badge">⚡ OPEN</div>
       <h3>🔓 MEMBERSHIP PLEDGE</h3>
@@ -289,8 +328,6 @@
       <p>Digital ritual & directorate report. First Friday of each month.</p>
       <a href="#" class="btn" style="font-size:0.8rem;">→ JOIN EVENT</a>
     </div>
-
-    <!-- Legal & documentation -->
     <div class="hub-card">
       <div class="status-badge">🏛️ PUBLIC</div>
       <h3>📜 DECLARATION & BYLAWS</h3>
