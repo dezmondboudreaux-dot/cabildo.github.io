@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join · Mandala Foundation</title>
+  <style>
+    /* Same base style as homepage – consistent 80s tech aesthetic */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #000000;
+      color: #00FFFF;
+      font-family: 'Courier New', 'VT323', 'Fira Code', monospace;
+      line-height: 1.5;
+      font-size: 16px;
+      padding: 1.5rem;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(0deg, rgba(0,255,255,0.02) 0px, rgba(0,255,255,0.02) 2px, transparent 2px, transparent 6px);
+      pointer-events: none;
+      z-index: 999;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    h1, h2, h3, .logo-text, .nav a {
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-size: 2.8rem;
+      color: #FFFFFF;
+      text-shadow: 0 0 3px #00FFFF;
+    }
+    h2 {
+      font-size: 1.8rem;
+      border-left: 4px solid #FF00FF;
+      padding-left: 1rem;
+      margin: 2rem 0 1rem 0;
+      color: #FFFFFF;
+    }
+    h3 {
+      font-size: 1.2rem;
+      color: #00FFFF;
+      margin-bottom: 0.5rem;
+    }
+    a {
+      color: #00FFFF;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    a:hover {
+      color: #FF00FF;
+      text-shadow: 0 0 2px #FF00FF;
+    }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #00FFFF;
+      margin-bottom: 2rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .logo svg {
+      width: 50px;
+      height: 50px;
+    }
+    .logo-text {
+      font-size: 1.4rem;
+      letter-spacing: 3px;
+      color: #FFFFFF;
+    }
+    .logo-text span {
+      color: #FF00FF;
+    }
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    nav a {
+      font-size: 1rem;
+      padding: 0.25rem 0;
+      border-bottom: 1px solid transparent;
+    }
+    nav a:hover {
+      border-bottom-color: #FF00FF;
+    }
+    .btn {
+      display: inline-block;
+      background: transparent;
+      border: 1px solid #00FFFF;
+      color: #00FFFF;
+      padding: 0.6rem 1.2rem;
+      font-family: inherit;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn:hover {
+      background: #00FFFF;
+      color: #000000;
+      box-shadow: 0 0 8px #00FFFF;
+    }
+    .btn-magenta {
+      border-color: #FF00FF;
+      color: #FF00FF;
+    }
+    .btn-magenta:hover {
+      background: #FF00FF;
+      color: #000000;
+    }
+    .join-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .join-card {
+      background: #0A0A0A;
+      border: 1px solid #00FFFF;
+      padding: 1.5rem;
+    }
+    .step-number {
+      color: #FF00FF;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #00FFFF;
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    @media (max-width: 800px) {
+      body { padding: 1rem; }
+      .join-grid { grid-template-columns: 1fr; }
+      header { flex-direction: column; text-align: center; }
+      nav ul { gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">
+      <!-- same flower mandala SVG -->
+      <svg width="50" height="50" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="200" height="200" fill="#000000" />
+        <circle cx="100" cy="100" r="90" stroke="#00FFFF" stroke-width="1.5" stroke-dasharray="6 6" fill="none"/>
+        <g stroke="#00FFFF" stroke-width="2" fill="none">
+          <path d="M100,95 L100,35 L100,95" />
+          <path d="M100,105 L100,165 L100,105" />
+          <path d="M95,100 L35,100 L95,100" />
+          <path d="M105,100 L165,100 L105,100" />
+          <path d="M95,95 L50,50 L95,95" />
+          <path d="M105,95 L150,50 L105,95" />
+          <path d="M105,105 L150,150 L105,105" />
+          <path d="M95,105 L50,150 L95,105" />
+        </g>
+        <circle cx="100" cy="100" r="12" fill="#FF00FF" />
+        <circle cx="100" cy="100" r="4" fill="#FFFFFF" />
+        <g fill="#00FFFF">
+          <rect x="95" y="20" width="2" height="2" />
+          <rect x="95" y="178" width="2" height="2" />
+          <rect x="20" y="95" width="2" height="2" />
+          <rect x="178" y="95" width="2" height="2" />
+          <rect x="38" y="38" width="2" height="2" />
+          <rect x="160" y="38" width="2" height="2" />
+          <rect x="38" y="160" width="2" height="2" />
+          <rect x="160" y="160" width="2" height="2" />
+        </g>
+        <text x="190" y="195" font-family="'Courier New', monospace" font-size="7" fill="#00FFFF" text-anchor="end">FLWR-01</text>
+      </svg>
+      <div class="logo-text">MANDALA<span>FOUNDATION</span></div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="kalachakra.html">KALACHAKRA</a></li>
+        <li><a href="network.html">NETWORK HUB</a></li>
+        <li><a href="#">NODES</a></li>
+        <li><a href="#">DAO</a></li>
+        <li><a href="join.html">JOIN</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div style="text-align: center; margin: 2rem 0;">
+    <h1>✦ JOIN THE MANDALA ✦</h1>
+    <p style="color:#FF00FF;">membership · covenant · examination</p>
+    <div style="width: 80px; height: 2px; background: #00FFFF; margin: 1rem auto;"></div>
+  </div>
+
+  <div class="join-grid">
+    <div class="join-card">
+      <div class="step-number">01</div>
+      <h3>STUDY THE BOOK OF HEAVEN AND EARTH</h3>
+      <p>All prospective members must first understand the core principles of the Neon Enlightenment: abolition of the state, private property, and the patriarchal family. The required text is a synthesis of Kang Youwei’s <em>Datong Shu</em> and <em>The Heavens</em>.</p>
+      <a href="#" class="btn" style="margin-top: 1rem;">📖 READ THE COVENANT</a>
+    </div>
+    <div class="join-card">
+      <div class="step-number">02</div>
+      <h3>PASS THE WRITTEN EXAMINATION</h3>
+      <p>A short, open‑book exam based on the <em>Book of Heaven and Earth</em>. It tests your understanding of our doctrine and your commitment to the Mandala’s mission.</p>
+      <a href="#" class="btn" style="margin-top: 1rem;">✍️ REQUEST EXAM</a>
+    </div>
+    <div class="join-card">
+      <div class="step-number">03</div>
+      <h3>PLEDGE THE FIVE PECKS</h3>
+      <p>Annual contribution of $20 (or equivalent in kind) – the “Five Pecks”. This is not a fee; it is a ritual recommitment. Payment goes to the DAO treasury (USDC on Arbitrum or fiat via fiscal sponsor).</p>
+      <a href="#" class="btn btn-magenta" style="margin-top: 1rem;">💰 PLEDGE PORTAL</a>
+    </div>
+    <div class="join-card">
+      <div class="step-number">04</div>
+      <h3>RECEIVE YOUR SOULBOUND TOKEN</h3>
+      <p>Upon passing the exam and completing the pledge, you will be minted a non‑transferable membership token. One member, one vote. Welcome to the Orda.</p>
+      <a href="network.html" class="btn" style="margin-top: 1rem;">🔗 ACCESS CYBER‑SYSTEM HUB</a>
+    </div>
+  </div>
+
+  <div style="border: 1px solid #FF00FF; background: #050505; padding: 1rem; text-align: center; margin: 1rem 0;">
+    <p><span style="color:#FFFFFF;">&gt; Already a member?</span> <a href="network.html">Log into the Network Hub</a> for Discord, Snapshot, treasury view, and kurultai schedules.</p>
+  </div>
+
+  <div style="margin: 2rem 0;">
+    <h2>⦿ FREQUENTLY ASKED</h2>
+    <div style="border-left: 2px solid #00FFFF; padding-left: 1rem; margin: 1rem 0;">
+      <p><span style="color:#FFFFFF;">Q: Is the $20 pledge required every year?</span><br>A: Yes. Membership remains active only while your pledge is current. You will receive renewal reminders.</p>
+    </div>
+    <div style="border-left: 2px solid #00FFFF; padding-left: 1rem; margin: 1rem 0;">
+      <p><span style="color:#FFFFFF;">Q: Can I pay in cryptocurrency?</span><br>A: Yes. USDC (Arbitrum) preferred. Fiat options are available via our fiscal sponsor – contact us for details.</p>
+    </div>
+    <div style="border-left: 2px solid #00FFFF; padding-left: 1rem; margin: 1rem 0;">
+      <p><span style="color:#FFFFFF;">Q: What if I fail the exam?</span><br>A: You may retake after 30 days. Study materials are available in the Network Hub.</p>
+    </div>
+    <div style="border-left: 2px solid #00FFFF; padding-left: 1rem; margin: 1rem 0;">
+      <p><span style="color:#FFFFFF;">Q: Do I have to join an oba (housing cooperative)?</span><br>A: Not immediately. Membership is individual. Obas are encouraged but optional.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div>© 2026 MANDALA FOUNDATION · Wyoming UNA / DAO LLC</div>
+    <div><span style="color:#FF00FF;">✧</span> DECENTRALIZED · NONPROFIT · POST‑NATIONAL <span style="color:#FF00FF;">✧</span></div>
+    <div><a href="index.html">HOME</a> | <a href="kalachakra.html">KALACHAKRA</a> | <a href="network.html">NETWORK HUB</a> | <a href="join.html">JOIN</a></div>
+  </footer>
+</div>
+</body>
+</html>
